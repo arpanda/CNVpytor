@@ -27,7 +27,10 @@ jobs:
     - name: Install `gcsfuse`
       run: |
         sudo apt-get update
-        sudo apt-get install -y gcsfuse
+        sudo apt-get install -y software-properties-common
+        sudo add-apt-repository -y ppa:gcsfuse/ppa
+        sudo apt-get update
+        sudo apt-get install -y gcsfuse fuse
 
     - name: Mount Google Cloud Storage bucket
       run: |
