@@ -24,7 +24,18 @@ jobs:
         pip install .
         pip install pytest
         
-        
+    - name: Install `gcsfuse`
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gcsfuse
+
+    - name: Mount Google Cloud Storage bucket
+      run: |
+        mkdir -p /mnt/gcs-bucket
+        gcsfuse --foreground --implicit-dirs genomics-public-data /mnt/gcs-bucket
+
+    - name: List bucket contents
+      run: ls /mnt/gcs-bucket
 
     - name: Download pytor file
       run: |
