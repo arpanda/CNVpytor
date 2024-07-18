@@ -20,13 +20,18 @@ jobs:
 
     - name: Install dependencies
       run: |
+        pip install -r requirements.txt
         pip install pytest
+        pip install setup.py
         
 
     - name: Download pytor file
       run: |
           wget https://storage.googleapis.com/cnvpytor_data/HepG2_WGS.pytor
     
+    - name: check cnvpytor
+      run: |
+        cnvpytor -h
 
     - name: Run tests
       run: |

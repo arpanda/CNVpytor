@@ -3,7 +3,7 @@ from pathlib import Path
 
 
 def test_module():
-    pytor_path = "./downloads/HepG2_WGS.pytor"
+    pytor_path = "HepG2_WGS.pytor"
     if Path(pytor_path).exists():
         app = cnvpytor.Viewer(["HepG2_WGS.pytor"], bin_size=100000)
         print(app.ls())
