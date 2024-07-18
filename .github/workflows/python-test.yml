@@ -1,4 +1,4 @@
-name: Python package
+name: Test for python versions
 
 on: [push, pull_request]
 
@@ -24,9 +24,10 @@ jobs:
         pip install pytest
         pip install -r requirements.txt
 
-    -name: Download pytor file
-      run: |
-        wget https://storage.googleapis.com/cnvpytor_data/HepG2_WGS.pytor
+    - name: Download pytor file
+        run: |
+          wget https://storage.googleapis.com/cnvpytor_data/HepG2_WGS.pytor -P ./downloads
+    
 
     - name: Run tests
       run: |

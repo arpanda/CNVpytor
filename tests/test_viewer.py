@@ -3,8 +3,12 @@ from pathlib import Path
 
 
 def test_module():
-    app = cnvpytor.Viewer(["HepG2_WGS.pytor"], bin_size=100000)
-    print(app.ls())
+    pytor_path = "./downloads/HepG2_WGS.pytor"
+    if Path(pytor_path).exists():
+        app = cnvpytor.Viewer(["HepG2_WGS.pytor"], bin_size=100000)
+        print(app.ls())
+    else:
+        print(f"Incorrect Path: {pytor_path}")
 
 
 if __name__ == "__main__":
