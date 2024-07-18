@@ -25,8 +25,8 @@ jobs:
         pip install -r requirements.txt
 
     - name: Download pytor file
-        run: |
-          wget https://storage.googleapis.com/cnvpytor_data/HepG2_WGS.pytor -P ./downloads
+      run: |
+          wget https://storage.googleapis.com/cnvpytor_data/HepG2_WGS.pytor
     
 
     - name: Run tests
